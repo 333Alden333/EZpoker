@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: transparent;
+    overflow: hidden;
+}
+
+.overlay-container {
+    width: 400px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 12px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px 8px 0 0;
+    cursor: move;
+    -webkit-app-region: drag;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.controls {
+    display: flex;
+    gap: 4px;
+    -webkit-app-region: no-drag;
+}
+
+.control-btn {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Game State */
+.game-state {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.position-stack {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.label {
+    color: #aaa;
+    font-size: 11px;
+}
+
+.value {
+    color: #4ade80;
+    font-weight: bold;
+}
+
+.hole-cards {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 4px;
+}
+
+.card {
+    background: linear-gradient(135deg, #1f2937, #374151);
+    border: 1px solid #4b5563;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-weight: bold;
+    font-size: 11px;
+    min-width: 28px;
+    text-align: center;
+}
+
+/* Board Section */
+.board-section {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.street-label {
+    font-weight: bold;
+    color: #fbbf24;
+    margin-bottom: 6px;
+    font-size: 11px;
+}
+
+.board-cards {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+/* Recommendation Section */
+.recommendation-section {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.recommendation-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #60a5fa;
+}
+
+.primary-action {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4ade80;
+    margin-bottom: 8px;
+    text-align: center;
+    padding: 6px;
+    background: rgba(74, 222, 128, 0.1);
+    border-radius: 4px;
+}
+
+.frequency-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.freq-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 0;
+}
+
+.action {
+    color: #d1d5db;
+}
+
+.percentage {
+    color: #fbbf24;
+    font-weight: bold;
+}
+
+/* Opponent Stats */
+.opponent-stats {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #f87171;
+}
+
+.opponent {
+    margin-bottom: 8px;
+}
+
+.opp-position {
+    font-weight: bold;
+    color: #fbbf24;
+    margin-bottom: 4px;
+}
+
+.opp-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 4px;
+    font-size: 11px;
+}
+
+.gto-deviation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deviation-label {
+    color: #9ca3af;
+    font-size: 10px;
+}
+
+.deviation-value {
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.deviation-value.positive {
+    color: #ef4444;
+}
+
+.deviation-value.negative {
+    color: #22c55e;
+}
+
+/* Manual Input */
+.manual-input {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-section {
+    margin-bottom: 8px;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 3px;
+    color: #d1d5db;
+    font-size: 11px;
+}
+
+.input-section input,
+.input-section select {
+    width: 100%;
+    padding: 4px 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    color: white;
+    font-size: 11px;
+}
+
+.input-section input:focus,
+.input-section select:focus {
+    outline: none;
+    border-color: #60a5fa;
+}
+
+.update-btn {
+    width: 100%;
+    padding: 6px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.update-btn:hover {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+/* Status Bar */
+.status-bar {
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 8px 8px;
+}
+
+.status-indicator {
+    color: #22c55e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 450px) {
+    .overlay-container {
+        width: 350px;
+    }
+}
+
+/* Scrollbar styling for overflow content */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}

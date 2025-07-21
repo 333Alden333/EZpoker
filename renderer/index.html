@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTO Poker Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="overlay-container">
+        <!-- Header with controls -->
+        <div class="header" id="header">
+            <div class="title">GTO Assistant</div>
+            <div class="controls">
+                <button id="minimize-btn" class="control-btn">−</button>
+                <button id="lock-btn" class="control-btn">🔓</button>
+                <button id="close-btn" class="control-btn">×</button>
+            </div>
+        </div>
+
+        <!-- Game State Display -->
+        <div class="game-state">
+            <div class="position-stack">
+                <span class="label">Position:</span>
+                <span id="position" class="value">BTN</span>
+                <span class="label">Stack:</span>
+                <span id="stack-size" class="value">100BB</span>
+            </div>
+            
+            <div class="hole-cards">
+                <span class="label">Cards:</span>
+                <div class="cards-container">
+                    <div class="card" id="card1">A♠</div>
+                    <div class="card" id="card2">K♥</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Board Cards -->
+        <div class="board-section">
+            <div class="street-label" id="street-label">PREFLOP</div>
+            <div class="board-cards" id="board-cards">
+                <!-- Board cards will be populated here -->
+            </div>
+        </div>
+
+        <!-- GTO Recommendation -->
+        <div class="recommendation-section">
+            <div class="recommendation-title">GTO Recommendation</div>
+            <div class="primary-action" id="primary-action">RAISE 3x</div>
+            <div class="frequency-breakdown" id="frequency-breakdown">
+                <div class="freq-item">
+                    <span class="action">Raise:</span>
+                    <span class="percentage">68%</span>
+                </div>
+                <div class="freq-item">
+                    <span class="action">Call:</span>
+                    <span class="percentage">22%</span>
+                </div>
+                <div class="freq-item">
+                    <span class="action">Fold:</span>
+                    <span class="percentage">10%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Opponent Stats -->
+        <div class="opponent-stats">
+            <div class="stats-title">Opponent Stats</div>
+            <div class="opponent" id="opponent-1">
+                <div class="opp-position">UTG</div>
+                <div class="opp-stats">
+                    <span>VPIP: 15%</span>
+                    <span>PFR: 12%</span>
+                    <span>Fold C-bet: 65%</span>
+                </div>
+                <div class="gto-deviation">
+                    <span class="deviation-label">GTO Dev:</span>
+                    <span class="deviation-value positive">+2%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manual Input Section -->
+        <div class="manual-input">
+            <div class="input-section">
+                <label for="manual-cards">Enter Cards:</label>
+                <input type="text" id="manual-cards" placeholder="AsKh" maxlength="4">
+            </div>
+            <div class="input-section">
+                <label for="manual-position">Position:</label>
+                <select id="manual-position">
+                    <option value="UTG">UTG</option>
+                    <option value="MP">MP</option>
+                    <option value="CO">CO</option>
+                    <option value="BTN" selected>BTN</option>
+                    <option value="SB">SB</option>
+                    <option value="BB">BB</option>
+                </select>
+            </div>
+            <div class="input-section">
+                <label for="manual-stack">Stack (BB):</label>
+                <input type="number" id="manual-stack" value="100" min="1" max="500">
+            </div>
+            <button id="update-gto" class="update-btn">Update GTO</button>
+        </div>
+
+        <!-- Status Indicator -->
+        <div class="status-bar">
+            <span id="detection-status" class="status-indicator">Manual Mode</span>
+            <span id="solver-status" class="status-indicator">TexasSolver Ready</span>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
