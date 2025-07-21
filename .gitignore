@@ -71,3 +71,12 @@ logs
 
 # Electron build files
 dist_electron/
+dist/
+
+# Build artifacts
+*.dmg
+*.exe
+*.AppImage
+*.snap
+*.deb
+*.rpm

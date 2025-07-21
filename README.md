@@ -28,15 +28,29 @@ A transparent overlay application for real-time GTO poker assistance, similar to
 
 ## Installation
 
+### 🚀 **Option 1: Download Ready-to-Use App (Easiest)**
+
+**Mac Users:**
+- [Download EZpoker-1.0.0.dmg](https://github.com/333Alden333/EZpoker/releases/latest) (Intel Macs)
+- [Download EZpoker-1.0.0-arm64.dmg](https://github.com/333Alden333/EZpoker/releases/latest) (Apple Silicon M1/M2/M3)
+
+**Windows/Linux:** Coming soon!
+
+### 🔧 **Option 2: Build from Source**
+
 ```bash
 # Clone and install dependencies
+git clone https://github.com/333Alden333/EZpoker.git
+cd EZpoker
 npm install
 
 # Run in development mode
 npm run dev
 
-# Build executable
-npm run build
+# Build executables
+npm run build:mac    # Mac .dmg files
+npm run build:win    # Windows .exe installer  
+npm run build:linux  # Linux .AppImage
 ```
 
 ## Usage
