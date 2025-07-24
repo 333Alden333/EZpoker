@@ -1,5 +1,7 @@
 # EZpoker
 
+WORK IN PROGRESS, PROBABLY DOESN'T WORK YET 
+
 A transparent overlay application for real-time GTO poker assistance, similar to Cluely.
 
 ## Features
